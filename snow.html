@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .snowflake {
+    position: absolute;
+    color: #FFF;
+  }
+</style>
+</head>
+<body bgcolor="pink">
+<script>
+  // 雪を降らせるJavaScriptコード
+  function createSnowflake() {
+    const snowflake = document.createElement('span');
+    snowflake.className = 'snowflake';
+    snowflake.textContent = '❄❄❄❄❄❄❄❄';
+    document.body.appendChild(snowflake);
+
+    const x = Math.random() * window.innerWidth;
+    const y = 0;
+    snowflake.style.left = x + 'px';
+    snowflake.style.top = y + 'px';
+
+    setTimeout(() => {
+      snowflake.remove();
+    }, 500);
+  }
+
+  setInterval(createSnowflake, 500);
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Regsiter And Login Screen❄❄❄</title>
+       <link rel="stylesheet" href="loginstyle.css" />
+  
+    </head>
+    <body>
+    <div class="login-wrap">
+      <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">ログイン</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">登録</label>
+        <div class="login-form">
+            <form method="post" action="menu.html">
+          <div class="sign-in-htm">
+            <div class="group">
+              <label for="user" class="label">ユーザ名</label>
+              <input id="user" type="text" class="input" Required>
+            </div>
+            <div class="group">
+              <label for="pass" class="label">パスワード</label>
+              <input id="pass" type="password" class="input" data-type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            </div>
+            <div class="group">
+              <input id="check" type="checkbox" class="check" checked>
+              <label for="check"><span class="icon"></span> ログイン状態を保存する</label>
+            </div>
+            <div class="group">
+              <input type="submit" class="button" value="LOGIN" onclick="javascript:validatelogin()" />
+            
+            </div>
+        </form>
+            <div class="hr"></div>
+            <div class="foot-lnk">
+              <a href="#forgot">パスワードを忘れた方はこちら</a>
+            </div>
+          </div>
+          <form method="post" action="login.html">
+          <div class="sign-up-htm">
+            <div class="group">
+              <label for="user" class="label">ユーザ名</label>
+              <input id="user" type="text" class="input" placeholder="山田太郎" required> 
+            </div>
+            <div class="group">
+              <label for="pass" class="label">パスワード</label>
+              <input id="pass" type="password" class="input" data-type="password" required>
+            </div>
+            <div class="group">
+              <label for="repass" class="label">再パスワード</label>
+              <input id="repass" type="password" class="input" data-type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            </div>
+            <div class="group">
+              <label for="mail" class="label">メールアドレス</label>
+              <input id="mail" type="text" class="input" required>
+            </div>
+            <div class="group">
+              <input type="submit" class="button" value="登録" onclick="javascript:validateregister()" />
+            </div>
+            <div class="hr"></div>
+            <div class="foot-lnk">
+              <label for="tab-1">すでに会員ですか?</a>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+ <script type="text/javascript">
+       function validatelogin()
+    {
+    
+        if(document.getElementById("user").value == "admin"
+           && document.getElementById("pass").value == "Kaungmalay123!" )
+        {
+            alert("ログイン成功！");
+            location.href="menu.html";
+        }
+        else {
+            alert( "エラーユーザ名とパスワドが間違えています!。" );
+            location.href="http://ifdnzact.com/HttpWatch.cfm?domain=error404.com&fp=pVJs%2Fh5LIZJKSWnzL9jBJ%2FEcaMZtW9lOwG1%2BbTMviWe1UNrRXLYMDJS%2FsDfI75cZEVg7b3CeUWgTp3Ak5XJmNrgjvfbHHNs5oKkfdE%2BHA%2FGjCBjrtGhQFBiKIrJOa9jKjWbPQv%2B4Z%2Ft%2BM8LfkMAXkTwj0BK4hl8OSx%2FqYuJaVEf5RX6Hn7P0ziFuVXeqR%2FmQ758cwoXlCK5HAVRlHAu7zQ9sRA3XKINJ2rFh%2BJwOhcByvmQG35mJ%2BgFwlzE%2B%2FigxAoY3JmKUf6SIaTA5IwpLPpR9z9PP0QDGhPgUxA2FrQS6Lnxi1n%2B85hdE5njONGP7&yep=%2B3ybAtRQU%2FD9%2FHhTkdGWQn7Ewd7skYRU451SLFZ5QkfmBG1r8kvSqH%2BHa2r8kFfOFzezbjWAVR5fECfZdcOlfUGRlimnw3pR9Jjq8uEhUj4YIxghF4DCNBxSFht45PahwqGXEJ0DdBkwGn69zJVW16keMCF3h5v%2FyZF2IhuFx2o3O8Nouk1Y5zw9XMjfceCqynnXUL%2BFa5%2F1zD%2BCMhWI%2BrOpPGw7aW9WuUGw61iUXL%2BaLBcBvymDMHniMGVO85DIBe56YPAJn2EMJCrm923w1Kp62FIrgTlFLPM5XUjNNdOuGo9SlGD3UZLmoJ%2FPKN6LwNEaqJ1t37B9Pms3o7pALalAO8kC%2FxxwkrHyiWMiHnclRO9zY%2Fhe2SNrlTrFH4KBcf0nqEvmb04V4T1qUVWG9IKVj57wqMM6Sjpxr5T8RckvNKimweQsXw4MtMcis71dYGbcqFZB6MU0pTBBBX5ZzLpVqVSL6W%2BtcbAveQcw1LQ%2FYL7VqsnOeOfWsfLbg2n48yWuQ%2FP1b5OsD6wM5fpmlhXu2GDpYxt6onsdvhuLMS4b9VTzkdLKh4VgY5g1ji6DQUJpRZmWsRzd%2F2jfeKQHnHZhSYpnZ%2FKaQEnhvsT%2BmgABtRzUpC7NKZR%2B0In79PI%2B54TvfurfZHEfScxZ%2Br7K5YmxKsrDRCb3b35fo2whPalqD9NgUmfMTNJxX8Jedzr5sUg01fbLcghWOsO%2FTrpsJCBbHAqmrZOpzfbFfkMeAnBUYNVnS%2FsqgX%2BDFWPZ31QWkBObFJQB8myBZf31yWQFtqsiUvBSfHkjwUzSk%2Fsnw4WWPN%2FGjlt0QZOPOaXRMehD%2Bgi55OM3CNI%2B6SBrp5xIldF2CnsKSSL1CdUc51%2F9wHWRNfyiB33Z6zv3toxoohiXsttEzhpHtEPBfNccGFisf6Pb2s8NF1G2ll4xbqGbSHnnSg%2FD3lEvGE0bexmKSGnnKTMsaFu81teiU3EHBq8N7Sp0IeYggi9W7zDgBWcTGkFH1eMCGTps8XWb2bcpArA8pa4Ru22vsvoqBJlVK7REkpYgVuLk3McRzxGlZScOGE%2FAjGXzQQiwiZQhpWC1wPv9%2BIuNgNIrKXlxKXy8a9zSnjCGr2qcFzyC6qVjV16GFmSI9ZXURylcC%2FO%2Fg3ggSFRgqZ%2B9tMiEljQQAFq3ypOv9TNjb9VDr11I4lskH5GKh46aP0mvSquFJcxvDXCIULeFhrpixoOrQtPHTM1wZc36YSi5I2Jpo7XX05wyEZKRpb48xBEZk%2FdSNSI0T1KIlv3j%2BD1Bebupl%2BaxOdz8u9gybuXZexwgjcbZbxPRoGVQna7SrEAZ2JsPQ6sDxwnSfTiAlJRcqW9fIDR70ZeUtKP9NdtUdNmn%2BjpDjkAcHaRrza2x3ay92LmpgI6STbtgWCadTsL%2FkUYsj4ymF7%2Bc%2FK%2Bs8rquEOVjCYjrOy9yvgf7AwMNtmM4HvbXBTimKsqGdWRsZ0s7M1W2ZyU30l%2FUn6COIZv0Bpb%2F3xHv6zXu0b0nPdYYT%2BO1YtvLg%2B7TaNNs0t6h3Q7eXOcBaE5wvbJG8cgI%2FmK%2F95vBdvYpd6asi4KShdk%3D&gtnp=0&gtpp=0&kbetu=1&maxads=0&kld=1063&yprpnd=UHM6ofc%2BmzTMdphcWy%2Bzzw%3D%3D&_opnslfp=1&prvtof=%2F5C6IAWFC12X%2BzmVBQXLPpH2K9qsH5rXHRg75GQ47QU%3D&&gtnp=0&gtpp=0&kt=246&&kbc=54&ki=14436468&ktd=0&kld=1063&kp=1&bd=9%23768%231366%231%230%23531%23238";
+        }
+    }
+        function validateregister()
+    {
+       document.getElementById("validateregister").onclick = function() {
+    const name = document.getElementById("name").value;
+    const pass = document.getElementById("pass").value;
+    const repass = document.getElementById("repass").value;
+    const mail = document.getElementById("mail").value;
+
+    var flag = 0;
+    if(name.length == 0){flag = 1;}
+    if(name_huri.length == 0){ flag = 1; }
+    if(mail.length == 0){ flag = 1; }
+    if(pass.length == 0){ flag = 1; }
+    if(repass.length == 0){ flag = 1; }
+
+    if(flag == 1){ alert('必須項目が未記入の箇所があります'); return false; }
+    else{
+        flag_chk = 0;
+
+        var regexp = /[一-龠]/;
+        if(regexp.test(name) != true){ document.getElementById('name_chk').style.display = "block"; flag_chk = 1; }
+        else{ document.getElementById('name_chk').style.display = "none"; }
+
+        var regexp = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
+        if(regexp.test(mail) != true){ document.getElementById('mail_chk').style.display = "block"; flag_chk = 1; }
+        else{ document.getElementById('mail_chk').style.display = "none"; }
+
+        var regexp = /^([a-zA-Z0-9]{8,})$/;
+        if(regexp.test(pass) != true){ document.getElementById('pass_chk').style.display = "block"; flag_chk = 1; }
+        else{ document.getElementById('pass_chk').style.display = "none"; }
+
+        if(pass != repass){ document.getElementById('repass_chk').style.display = "block"; flag_chk = 1; }
+        else{ document.getElementById('repass_chk').style.display = "none"; }
+
+        if(flag_chk == 1){ return false; }
+        else{ return ture; }
+         alert("登録しました。！");
+            location.href="login.html";
+    }
+};
+     }
+    setTimeout("location.reload()",90000); 
+    </script>
+    </body>
+    </html> 
